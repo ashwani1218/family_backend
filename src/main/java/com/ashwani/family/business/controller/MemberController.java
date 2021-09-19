@@ -2,7 +2,7 @@ package com.ashwani.family.business.controller;
 
 import com.ashwani.family.business.service.MemberService;
 import com.ashwani.family.infra.model.request.AddMemberRequest;
-import com.ashwani.family.infra.model.response.AddMemberResponse;
+import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindAllMembersResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ public class MemberController {
     private MemberService memberService;
 
     @PostMapping("/addMember")
-    public AddMemberResponse addMember(@RequestBody AddMemberRequest request){
+    public BaseResponse addMember(@RequestBody AddMemberRequest request){
         log.info("Add Family member request [{}]", request);
         return memberService.addMember(request);
     }
@@ -30,7 +30,7 @@ public class MemberController {
     }
 
     @GetMapping("/member/{id}")
-    public FindMemberResponse findMember(@PathVariable Long id){
+    public FindMemberResponse findMember(@PathVariable String id){
         log.info("Find Family member with id [{}]",id);
         return memberService.findMemberById(id);
     }

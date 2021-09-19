@@ -1,21 +1,17 @@
 package com.ashwani.family.infra.model.request;
 
-
 import com.ashwani.family.infra.model.GenericRequest;
 import com.ashwani.family.util.constants.JsonConstants;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-@Getter
-@Setter
+@Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class AddMemberRequest extends BaseRequest implements GenericRequest {
+@Getter@Setter
+public class FindAllPoliciesRequest extends BaseRequest implements GenericRequest {
 
-    @JsonProperty(JsonConstants.FIRST_NAME)
-    private String firstName;
-
-    @JsonProperty(JsonConstants.LAST_NAME)
-    private String lastName;
+    @JsonProperty(JsonConstants.HOLDER)
+    private Long holder;
 }

@@ -13,10 +13,10 @@ public class BaseSuccessResponseBuilder {
     private ResponseConstants responseConstants;
 
     public BaseResponse baseSuccessResponse(){
-        return BaseResponse.builder()
-                .httpStatus(HttpStatus.OK)
-                .responseCode(responseConstants.SUCCESS_CODE)
-                .Status(responseConstants.SUCCESS_STATUS)
-                .build();
+        BaseResponse response = new BaseResponse();
+        response.setHttpStatus(HttpStatus.OK);
+        response.setResponseCode(responseConstants.SUCCESS_CODE);
+        response.setStatus(responseConstants.SUCCESS_STATUS);
+        return response;
     }
 }

@@ -23,4 +23,7 @@ public class ResponseConstants {
     public final String ADD_MEMBER_SUCCESS = "Member Added Successfully";
     public final String ADD_MEMBER_FAILURE = "Unable to add Member";
 
+    public final String ADD_POLICY_SUCCESS = "Policy Added Successfully";
+    public final String ADD_POLICY_FAILURE = "Unable to add Policy";
+
 }

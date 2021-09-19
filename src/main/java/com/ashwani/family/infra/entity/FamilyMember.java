@@ -1,32 +1,35 @@
 package com.ashwani.family.infra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-@Data@AllArgsConstructor
+@Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "family_member")
+@Document(collection = "family_member")
 public class FamilyMember {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @MongoId(FieldType.OBJECT_ID)
+    private String id;
 
-    @Column(name = "first_name")
+    @Indexed
     private String firstName;
 
-    @Column(name = "last_name")
     private String lastName;
 
-
-    @OneToMany(mappedBy = "holder")
+    @DBRef
+    @JsonIgnore
     private Set<Policy> policies;
 
 }

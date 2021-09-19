@@ -13,10 +13,10 @@ public class BaseFailedResponseBuilder {
     private ResponseConstants responseConstants;
 
     public BaseResponse baseFailResponse(){
-        return BaseResponse.builder()
-                .httpStatus(HttpStatus.BAD_REQUEST)
-                .responseCode(responseConstants.FAILURE_CODE)
-                .Status(responseConstants.FAILED_STATUS)
-        .build();
+        BaseResponse response = new BaseResponse();
+        response.setHttpStatus(HttpStatus.BAD_REQUEST);
+        response.setResponseCode(responseConstants.FAILURE_CODE);
+        response.setStatus(responseConstants.FAILED_STATUS);
+       return response;
     }
 }

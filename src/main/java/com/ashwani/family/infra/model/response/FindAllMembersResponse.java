@@ -8,12 +8,12 @@ import lombok.*;
 
 import java.util.List;
 
-@Builder
 @Data
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class FindAllMembersResponse extends BaseResponse implements GenericResponse {
 
     @JsonProperty(JsonConstants.MEMBERS)

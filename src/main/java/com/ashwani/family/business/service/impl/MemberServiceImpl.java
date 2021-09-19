@@ -3,18 +3,20 @@ package com.ashwani.family.business.service.impl;
 import com.ashwani.family.business.service.MemberService;
 import com.ashwani.family.infra.entity.FamilyMember;
 import com.ashwani.family.infra.model.request.AddMemberRequest;
-import com.ashwani.family.infra.model.response.AddMemberResponse;
+import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindAllMembersResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
 import com.ashwani.family.infra.repository.FamilyMemberRepository;
 import com.ashwani.family.util.responseBuilder.failed.MemberFailedResponseBuilder;
-import com.ashwani.family.util.responseBuilder.succes.MemberSuccessResponseBuilder;
-import com.ashwani.family.util.translator.MemberTranslator;
+import com.ashwani.family.util.responseBuilder.success.MemberSuccessResponseBuilder;
+import com.ashwani.family.business.translator.MemberTranslator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberServiceImpl implements MemberService {
 
     @Autowired
@@ -30,7 +32,7 @@ public class MemberServiceImpl implements MemberService {
     private FamilyMemberRepository memberRepository;
 
     @Override
-    public AddMemberResponse addMember(AddMemberRequest request) {
+    public BaseResponse addMember(AddMemberRequest request) {
         FamilyMember member = memberTranslator.addMemberTranslator(request);
         try{
             memberRepository.save(member);
@@ -48,7 +50,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public FindMemberResponse findMemberById(Long id) {
+    public FindMemberResponse findMemberById(String id) {
         Optional<FamilyMember> familyMemberOptional = memberRepository.findById(id);
         if(familyMemberOptional.isPresent()){
             return successResponseBuilder.findMember(familyMemberOptional.get());

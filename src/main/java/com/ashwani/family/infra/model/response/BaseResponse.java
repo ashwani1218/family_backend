@@ -12,9 +12,7 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class BaseResponse implements Serializable {
-
 
     @JsonIgnore
     private HttpStatus httpStatus;

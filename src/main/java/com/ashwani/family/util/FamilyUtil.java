@@ -8,7 +8,8 @@ import java.util.Map;
 
 @Component
 public class FamilyUtil {
-    public static final boolean isNullOrZero(final Long o) {
+
+    public  final boolean isNullOrZero(final Long o) {
         if(o==null) return true;
         else if(o==0) {
             return true;
@@ -16,7 +17,7 @@ public class FamilyUtil {
         return false;
     }
 
-    public static final boolean isNullOrEmpty(Object o) {
+    public  final boolean isNullOrEmpty(Object o) {
         if(o==null) {
             return true;
         }
@@ -33,8 +34,10 @@ public class FamilyUtil {
         return false;
     }
 
-    public static Date getCurrentDate() {
+    public  Date getCurrentDate() {
         return new Date();
     }
+
+
 
 }

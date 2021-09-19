@@ -22,7 +22,7 @@ public class AddPolicyRequest extends BaseRequest implements GenericRequest {
 
     @NonNull
     @JsonProperty(JsonConstants.HOLDER)
-    private FamilyMember holder;
+    private String holder;
 
     @NonNull
     @JsonProperty(JsonConstants.POLICY_NUMBER)

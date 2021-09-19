@@ -1,6 +1,6 @@
 package com.ashwani.family.util.responseBuilder.failed;
 
-import com.ashwani.family.infra.model.response.AddMemberResponse;
+import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
 import com.ashwani.family.util.constants.ResponseConstants;
 import com.ashwani.family.util.responseBuilder.BaseFailedResponseBuilder;
@@ -16,13 +16,18 @@ public class MemberFailedResponseBuilder {
     @Autowired
     private BaseFailedResponseBuilder baseFailedResponseBuilder;
 
-    public AddMemberResponse addMember() {
-        AddMemberResponse resp = (AddMemberResponse) baseFailedResponseBuilder.baseFailResponse();
+    public BaseResponse addMember() {
+        BaseResponse resp = baseFailedResponseBuilder.baseFailResponse();
         resp.setResponseDescription(responseConstants.ADD_MEMBER_FAILURE);
         return resp;
     }
 
     public FindMemberResponse findMember() {
-       return (FindMemberResponse) baseFailedResponseBuilder.baseFailResponse();
+      BaseResponse response =  baseFailedResponseBuilder.baseFailResponse();
+      var resp = new FindMemberResponse();
+      resp.setHttpStatus(response.getHttpStatus());
+      resp.setResponseCode(response.getResponseCode());
+      resp.setResponseDescription(response.getResponseDescription());
+      return resp;
     }
 }

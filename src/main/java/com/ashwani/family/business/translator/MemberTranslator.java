@@ -1,4 +1,4 @@
-package com.ashwani.family.util.translator;
+package com.ashwani.family.business.translator;
 
 import com.ashwani.family.infra.entity.FamilyMember;
 import com.ashwani.family.infra.model.request.AddMemberRequest;
