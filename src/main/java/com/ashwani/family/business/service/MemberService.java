@@ -1,10 +1,8 @@
 package com.ashwani.family.business.service;
 
 import com.ashwani.family.infra.model.request.AddMemberRequest;
-import com.ashwani.family.infra.model.response.AddMemberResponse;
-import com.ashwani.family.infra.model.response.BaseResponse;
-import com.ashwani.family.infra.model.response.FindAllMembersResponse;
-import com.ashwani.family.infra.model.response.FindMemberResponse;
+import com.ashwani.family.infra.model.request.GetDocumentRequest;
+import com.ashwani.family.infra.model.response.*;
 
 public interface MemberService {
 
@@ -13,4 +11,6 @@ public interface MemberService {
     public FindAllMembersResponse findAllMembers();
 
     public FindMemberResponse findMemberById(String id);
+
+    GetDocumentResponse getDocuments(GetDocumentRequest getDocumentRequest);
 }

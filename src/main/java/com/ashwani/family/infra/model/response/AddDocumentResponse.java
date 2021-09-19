@@ -6,5 +6,5 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @Getter@Setter
-public class AddPolicyResponse extends BaseResponse implements GenericResponse {
+public class AddDocumentResponse extends BaseResponse implements GenericResponse {
 }

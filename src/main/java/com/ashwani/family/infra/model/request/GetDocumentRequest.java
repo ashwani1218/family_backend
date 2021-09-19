@@ -5,13 +5,11 @@ import com.ashwani.family.util.constants.JsonConstants;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-@Builder
-@Data
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor@Data
 @Getter@Setter
-public class FindAllPoliciesRequest extends BaseRequest implements GenericRequest {
+public class GetDocumentRequest extends BaseRequest implements GenericRequest {
 
     @JsonProperty(JsonConstants.HOLDER)
-    private Long holder;
+    private String memberId;
 }

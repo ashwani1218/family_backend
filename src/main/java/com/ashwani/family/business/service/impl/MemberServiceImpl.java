@@ -3,12 +3,14 @@ package com.ashwani.family.business.service.impl;
 import com.ashwani.family.business.service.MemberService;
 import com.ashwani.family.infra.entity.FamilyMember;
 import com.ashwani.family.infra.model.request.AddMemberRequest;
+import com.ashwani.family.infra.model.request.GetDocumentRequest;
 import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindAllMembersResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
+import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import com.ashwani.family.infra.repository.FamilyMemberRepository;
-import com.ashwani.family.util.responseBuilder.failed.MemberFailedResponseBuilder;
-import com.ashwani.family.util.responseBuilder.success.MemberSuccessResponseBuilder;
+import com.ashwani.family.util.response_builder.failed.MemberFailedResponseBuilder;
+import com.ashwani.family.util.response_builder.success.MemberSuccessResponseBuilder;
 import com.ashwani.family.business.translator.MemberTranslator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,6 +60,11 @@ public class MemberServiceImpl implements MemberService {
         else{
             return failedResponseBuilder.findMember();
         }
+    }
+
+    @Override
+    public GetDocumentResponse getDocuments(GetDocumentRequest getDocumentRequest) {
+        return null;
     }
 
 

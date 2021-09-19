@@ -2,9 +2,11 @@ package com.ashwani.family.business.controller;
 
 import com.ashwani.family.business.service.MemberService;
 import com.ashwani.family.infra.model.request.AddMemberRequest;
+import com.ashwani.family.infra.model.request.GetDocumentRequest;
 import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindAllMembersResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
+import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -33,5 +35,11 @@ public class MemberController {
     public FindMemberResponse findMember(@PathVariable String id){
         log.info("Find Family member with id [{}]",id);
         return memberService.findMemberById(id);
+    }
+
+    @PostMapping("/getPolicies")
+    public GetDocumentResponse getDocuments(GetDocumentRequest getDocumentRequest){
+        log.info("Get Member Policies request [{}]", getDocumentRequest);
+        return memberService.getDocuments(getDocumentRequest);
     }
 }

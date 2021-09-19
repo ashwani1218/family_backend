@@ -1,9 +1,9 @@
-package com.ashwani.family.util.responseBuilder.failed;
+package com.ashwani.family.util.response_builder.failed;
 
 import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
 import com.ashwani.family.util.constants.ResponseConstants;
-import com.ashwani.family.util.responseBuilder.BaseFailedResponseBuilder;
+import com.ashwani.family.util.response_builder.BaseFailedResponseBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,14 +11,11 @@ import org.springframework.stereotype.Component;
 public class MemberFailedResponseBuilder {
 
     @Autowired
-    private ResponseConstants responseConstants;
-
-    @Autowired
     private BaseFailedResponseBuilder baseFailedResponseBuilder;
 
     public BaseResponse addMember() {
         BaseResponse resp = baseFailedResponseBuilder.baseFailResponse();
-        resp.setResponseDescription(responseConstants.ADD_MEMBER_FAILURE);
+        resp.setResponseDescription(ResponseConstants.ADD_MEMBER_FAILURE);
         return resp;
     }
 

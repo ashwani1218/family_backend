@@ -30,6 +30,6 @@ public class FamilyMember {
 
     @DBRef
     @JsonIgnore
-    private Set<Policy> policies;
+    private Set<MemberDocument> policies;
 
 }

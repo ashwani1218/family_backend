@@ -1,11 +1,11 @@
-package com.ashwani.family.util.responseBuilder.success;
+package com.ashwani.family.util.response_builder.success;
 
 import com.ashwani.family.infra.entity.FamilyMember;
 import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindAllMembersResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
 import com.ashwani.family.util.constants.ResponseConstants;
-import com.ashwani.family.util.responseBuilder.BaseSuccessResponseBuilder;
+import com.ashwani.family.util.response_builder.BaseSuccessResponseBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +15,11 @@ import java.util.List;
 public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
 
     @Autowired
-    private ResponseConstants responseConstants;
-
-    @Autowired
     private BaseSuccessResponseBuilder baseSuccessResponseBuilder;
-
 
     public BaseResponse addMember() {
         BaseResponse resp = baseSuccessResponseBuilder.baseSuccessResponse();
-        resp.setResponseDescription(responseConstants.ADD_MEMBER_SUCCESS);
+        resp.setResponseDescription(ResponseConstants.ADD_MEMBER_SUCCESS);
         return resp;
     }
 
@@ -32,7 +28,7 @@ public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
         var resp = new FindAllMembersResponse();
         resp.setHttpStatus(response.getHttpStatus());
         resp.setResponseCode(response.getResponseCode());
-        resp.setResponseDescription(responseConstants.SUCCESS_CODE);
+        resp.setResponseDescription(ResponseConstants.SUCCESS_CODE);
         resp.setMembers(familyMembers);
         return resp;
     }
@@ -42,7 +38,7 @@ public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
         var resp = new FindMemberResponse();
         resp.setHttpStatus(response.getHttpStatus());
         resp.setResponseCode(response.getResponseCode());
-        resp.setResponseDescription(responseConstants.SUCCESS_CODE);
+        resp.setResponseDescription(ResponseConstants.SUCCESS_CODE);
         resp.setFamilyMember(familyMember);
         return resp;
     }

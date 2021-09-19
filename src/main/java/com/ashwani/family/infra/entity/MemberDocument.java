@@ -16,8 +16,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Document(collection = "policy")
-public class Policy {
+@Document(collection = "document")
+public class MemberDocument {
 
     @MongoId(FieldType.OBJECT_ID)
     private String id;
@@ -28,7 +28,9 @@ public class Policy {
     @DBRef
     private FamilyMember holder;
 
-    private String policyNumber;
+    private String issuerNo;
+
+    private Date issuerDate;
 
     private Date premiumDate;
 

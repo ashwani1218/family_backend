@@ -18,12 +18,10 @@ public class BaseResponse implements Serializable {
     private HttpStatus httpStatus;
 
     @JsonProperty(JsonConstants.BASE_RESPONSE_STATUS)
-    private String Status;
-
+    private String status;
 
     @JsonProperty(JsonConstants.BASE_RESPONSE_CODE)
     private String responseCode;
-
 
     @JsonProperty(JsonConstants.BASE_RESPONSE_DESCRIPTION)
     private String responseDescription;

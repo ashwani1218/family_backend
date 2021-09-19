@@ -1,8 +1,8 @@
 package com.ashwani.family.business.translator;
 
 import com.ashwani.family.infra.entity.FamilyMember;
-import com.ashwani.family.infra.entity.Policy;
-import com.ashwani.family.infra.model.request.AddPolicyRequest;
+import com.ashwani.family.infra.entity.MemberDocument;
+import com.ashwani.family.infra.model.request.AddDocumentRequest;
 import com.ashwani.family.infra.repository.FamilyMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,15 +12,16 @@ import java.time.Instant;
 import java.util.Optional;
 
 @Service
-public class PolicyTranslator {
+public class DocumentTranslator {
 
     @Autowired
     private FamilyMemberRepository memberRepository;
 
-    public Policy addPolicyTranslator(AddPolicyRequest request) {
+    public MemberDocument addDocumentTranslator(AddDocumentRequest request) {
         Optional<FamilyMember> member = memberRepository.findById(request.getHolder());
-        return Policy.builder()
-                .policyNumber(request.getPolicyNumber())
+        return MemberDocument.builder()
+                .issuerNo(request.getIssuerNumber())
+                .issuerDate(request.getIssuerDate())
                 .holder(member.orElse(null))
                 .lastYearOfPayment(request.getLastYearOfPayment())
                 .maturityAmount(request.getMaturityAmount())

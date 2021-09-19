@@ -13,7 +13,8 @@ public class JsonConstants {
 
     public static final String PARTICULAR = "particular";
     public static final String HOLDER = "holder";
-    public static final String POLICY_NUMBER = "policy_number";
+    public static final String ISSUER_NUMBER = "issuer_number";
+    public static final String ISSUER_DATE = "issuer_date";
     public static final String PREMIUM_DATE = "premium_date";
     public static final String PREMIUM_AMOUNT = "premium_amount";
     public static final String MATURITY_DATE = "maturity_date";
