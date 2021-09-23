@@ -1,9 +1,11 @@
 package com.ashwani.family.util.response_builder.success;
 
 import com.ashwani.family.infra.entity.FamilyMember;
+import com.ashwani.family.infra.entity.MemberDocument;
 import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindAllMembersResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
+import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import com.ashwani.family.util.constants.ResponseConstants;
 import com.ashwani.family.util.response_builder.BaseSuccessResponseBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,17 @@ public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
         resp.setResponseCode(response.getResponseCode());
         resp.setResponseDescription(ResponseConstants.SUCCESS_CODE);
         resp.setFamilyMember(familyMember);
+        return resp;
+    }
+
+    public GetDocumentResponse getDocuments(List<MemberDocument> memberDocuments) {
+        BaseResponse response = baseSuccessResponseBuilder.baseSuccessResponse();
+        var resp = new GetDocumentResponse();
+        resp.setHttpStatus(response.getHttpStatus());
+        resp.setResponseCode(response.getResponseCode());
+        resp.setResponseDescription(ResponseConstants.SUCCESS_CODE);
+        resp.setMemberDocuments(memberDocuments);
+        resp.setStatus(resp.getStatus());
         return resp;
     }
 }

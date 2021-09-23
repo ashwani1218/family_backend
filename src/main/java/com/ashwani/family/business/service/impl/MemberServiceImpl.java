@@ -2,6 +2,7 @@ package com.ashwani.family.business.service.impl;
 
 import com.ashwani.family.business.service.MemberService;
 import com.ashwani.family.infra.entity.FamilyMember;
+import com.ashwani.family.infra.entity.MemberDocument;
 import com.ashwani.family.infra.model.request.AddMemberRequest;
 import com.ashwani.family.infra.model.request.GetDocumentRequest;
 import com.ashwani.family.infra.model.response.BaseResponse;
@@ -9,6 +10,7 @@ import com.ashwani.family.infra.model.response.FindAllMembersResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
 import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import com.ashwani.family.infra.repository.FamilyMemberRepository;
+import com.ashwani.family.infra.repository.MemberDocumentRepository;
 import com.ashwani.family.util.response_builder.failed.MemberFailedResponseBuilder;
 import com.ashwani.family.util.response_builder.success.MemberSuccessResponseBuilder;
 import com.ashwani.family.business.translator.MemberTranslator;
@@ -32,6 +34,9 @@ public class MemberServiceImpl implements MemberService {
 
     @Autowired
     private FamilyMemberRepository memberRepository;
+
+    @Autowired
+    private MemberDocumentRepository documentRepository;
 
     @Override
     public BaseResponse addMember(AddMemberRequest request) {
@@ -64,7 +69,14 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public GetDocumentResponse getDocuments(GetDocumentRequest getDocumentRequest) {
-        return null;
+        Optional<FamilyMember> familyMemberOptional = memberRepository.findById(getDocumentRequest.getMemberId());
+        if(familyMemberOptional.isPresent()){
+            List<MemberDocument> memberDocuments = documentRepository.findAllByHolder(familyMemberOptional.get());
+            return successResponseBuilder.getDocuments(memberDocuments);
+        } else {
+            return failedResponseBuilder.getDocuments();
+        }
+
     }
 
 

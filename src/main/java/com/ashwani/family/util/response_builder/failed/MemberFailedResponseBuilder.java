@@ -2,6 +2,7 @@ package com.ashwani.family.util.response_builder.failed;
 
 import com.ashwani.family.infra.model.response.BaseResponse;
 import com.ashwani.family.infra.model.response.FindMemberResponse;
+import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import com.ashwani.family.util.constants.ResponseConstants;
 import com.ashwani.family.util.response_builder.BaseFailedResponseBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,14 @@ public class MemberFailedResponseBuilder {
       resp.setResponseCode(response.getResponseCode());
       resp.setResponseDescription(response.getResponseDescription());
       return resp;
+    }
+
+    public GetDocumentResponse getDocuments() {
+        BaseResponse response =  baseFailedResponseBuilder.baseFailResponse();
+        var resp = new GetDocumentResponse();
+        resp.setHttpStatus(response.getHttpStatus());
+        resp.setResponseCode(response.getResponseCode());
+        resp.setResponseDescription(response.getResponseDescription());
+        return resp;
     }
 }

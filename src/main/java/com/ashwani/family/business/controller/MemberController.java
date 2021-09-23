@@ -37,9 +37,9 @@ public class MemberController {
         return memberService.findMemberById(id);
     }
 
-    @PostMapping("/getPolicies")
-    public GetDocumentResponse getDocuments(GetDocumentRequest getDocumentRequest){
-        log.info("Get Member Policies request [{}]", getDocumentRequest);
-        return memberService.getDocuments(getDocumentRequest);
+    @PostMapping("/getDocuments")
+    public GetDocumentResponse getDocuments(@RequestBody GetDocumentRequest getDocumentRequest){
+        log.info("Get Member Documents request [{}]", getDocumentRequest);
+        return memberService. getDocuments(getDocumentRequest);
     }
 }

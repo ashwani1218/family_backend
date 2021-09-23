@@ -1,35 +1,33 @@
 package com.ashwani.family.infra.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.util.Set;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@Document(collection = "family_member")
-public class FamilyMember {
+@Document(collection = "document_type")
+public class DocumentType {
 
     @MongoId(FieldType.OBJECT_ID)
     private String id;
 
     @Indexed
-    private String firstName;
+    private String type;
 
-    private String lastName;
-
-    @DBRef
-    @JsonIgnore
-    private Set<MemberDocument> documents;
-
+    @Override
+    public String toString() {
+        return "DocumentType{" +
+                "id='" + id + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

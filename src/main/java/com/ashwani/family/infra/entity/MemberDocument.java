@@ -22,11 +22,13 @@ public class MemberDocument {
     @MongoId(FieldType.OBJECT_ID)
     private String id;
 
-    @Indexed
-    private String particular;
+    @DBRef
+    private DocumentType particular;
 
     @DBRef
     private FamilyMember holder;
+
+    private String documentTitle;
 
     private String issuerNo;
 
@@ -46,4 +48,22 @@ public class MemberDocument {
 
     private Date updatedAt;
 
+    @Override
+    public String toString() {
+        return "MemberDocument{" +
+                "id='" + id + '\'' +
+                ", particular=" + particular +
+                ", holder=" + holder +
+                ", documentTitle='" + documentTitle + '\'' +
+                ", issuerNo='" + issuerNo + '\'' +
+                ", issuerDate=" + issuerDate +
+                ", premiumDate=" + premiumDate +
+                ", premiumAmount=" + premiumAmount +
+                ", maturityDate=" + maturityDate +
+                ", maturityAmount='" + maturityAmount + '\'' +
+                ", lastYearOfPayment='" + lastYearOfPayment + '\'' +
+                ", createAt=" + createAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

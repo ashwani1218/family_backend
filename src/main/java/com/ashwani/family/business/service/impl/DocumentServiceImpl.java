@@ -30,9 +30,9 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public AddDocumentResponse addDocument(AddDocumentRequest request) {
-        MemberDocument policy = documentTranslator.addDocumentTranslator(request);
+        MemberDocument document = documentTranslator.addDocumentTranslator(request);
         try{
-            memberDocumentRepository.save(policy);
+            memberDocumentRepository.save(document);
         }catch (Exception e){
             return failedResponseBuilder.addDocument();
         }
