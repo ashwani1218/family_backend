@@ -1,6 +1,5 @@
 package com.ashwani.family.infra.model.request;
 
-import com.ashwani.family.infra.entity.DocumentType;
 import com.ashwani.family.infra.model.GenericRequest;
 import com.ashwani.family.util.constants.JsonConstants;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,6 +19,10 @@ public class AddDocumentRequest extends BaseRequest implements GenericRequest {
     @NonNull
     @JsonProperty(JsonConstants.PARTICULAR)
     private String particular;
+
+    @NonNull
+    @JsonProperty(JsonConstants.DOCUMENT_TITLE)
+    private String title;
 
     @NonNull
     @JsonProperty(JsonConstants.HOLDER)

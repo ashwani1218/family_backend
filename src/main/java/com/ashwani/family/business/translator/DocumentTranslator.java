@@ -28,6 +28,7 @@ public class DocumentTranslator {
         Optional<DocumentType> documentType = documentTypeRepository.findByType(request.getParticular());
         return MemberDocument.builder()
                 .issuerNo(request.getIssuerNumber())
+                .documentTitle(request.getTitle())
                 .issuerDate(request.getIssuerDate())
                 .holder(member.orElse(null))
                 .lastYearOfPayment(request.getLastYearOfPayment())

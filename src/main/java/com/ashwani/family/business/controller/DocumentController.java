@@ -24,7 +24,7 @@ public class DocumentController {
 
     @PostMapping("/addDocument")
     public AddDocumentResponse addDocument(@RequestBody AddDocumentRequest request){
-        log.info("Add Policy Request [{}]", request);
+        log.info("Add Document Request [{}]", request);
         return documentService.addDocument(request);
     }
 

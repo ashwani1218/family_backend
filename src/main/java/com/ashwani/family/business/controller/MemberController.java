@@ -40,6 +40,6 @@ public class MemberController {
     @PostMapping("/getDocuments")
     public GetDocumentResponse getDocuments(@RequestBody GetDocumentRequest getDocumentRequest){
         log.info("Get Member Documents request [{}]", getDocumentRequest);
-        return memberService. getDocuments(getDocumentRequest);
+        return memberService.getDocuments(getDocumentRequest);
     }
 }

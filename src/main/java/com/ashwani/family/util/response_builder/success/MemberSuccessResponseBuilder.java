@@ -52,7 +52,7 @@ public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
         resp.setResponseCode(response.getResponseCode());
         resp.setResponseDescription(ResponseConstants.SUCCESS_CODE);
         resp.setMemberDocuments(memberDocuments);
-        resp.setStatus(resp.getStatus());
+        resp.setStatus(response.getStatus());
         return resp;
     }
 }

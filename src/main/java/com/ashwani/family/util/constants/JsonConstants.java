@@ -29,5 +29,6 @@ public class JsonConstants {
     public static final String MEMBER_DOCUMENTS = "member_documents";
     public static final String DOCUMENT_TYPES = "document_types";
     public static final String DOCUMENT_TYPE = "document_type";
+    public static final String DOCUMENT_TITLE = "title";
 
 }
