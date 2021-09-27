@@ -32,6 +32,7 @@ public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
         resp.setResponseCode(response.getResponseCode());
         resp.setResponseDescription(ResponseConstants.SUCCESS_CODE);
         resp.setMembers(familyMembers);
+        resp.setStatus(response.getStatus());
         return resp;
     }
 
