@@ -39,6 +39,7 @@ public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
     public FindMemberResponse findMember(FamilyMember familyMember) {
         BaseResponse response = baseSuccessResponseBuilder.baseSuccessResponse();
         var resp = new FindMemberResponse();
+        resp.setStatus(response.getStatus());
         resp.setHttpStatus(response.getHttpStatus());
         resp.setResponseCode(response.getResponseCode());
         resp.setResponseDescription(ResponseConstants.SUCCESS_CODE);
