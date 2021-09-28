@@ -250,3 +250,4 @@ ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback
 2021-09-27 20:06:50,284 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find Family member with id [61472b036231c17dfb58ecaa]
 2021-09-27 20:06:57,748 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-3] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
 2021-09-27 20:08:00,960 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-4] Find All family members request
+2021-09-27 20:10:16,372 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:3, serverValue:144}] to localhost:27017 because the pool has been closed.
