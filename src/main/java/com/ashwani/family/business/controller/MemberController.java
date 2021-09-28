@@ -9,6 +9,7 @@ import com.ashwani.family.infra.model.response.FindMemberResponse;
 import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,18 +27,21 @@ public class MemberController {
     }
 
     @GetMapping("/members")
+    @Cacheable(value = "members")
     public FindAllMembersResponse findAllMembers(){
         log.info("Find All family members request");
         return memberService.findAllMembers();
     }
 
     @GetMapping("/member/{id}")
+    @Cacheable(value = "members", key = "#id")
     public FindMemberResponse findMember(@PathVariable String id){
         log.info("Find Family member with id [{}]",id);
         return memberService.findMemberById(id);
     }
 
     @PostMapping("/getDocuments")
+    @Cacheable(value = "documents", key = "#getDocumentRequest.memberId")
     public GetDocumentResponse getDocuments(@RequestBody GetDocumentRequest getDocumentRequest){
         log.info("Get Member Documents request [{}]", getDocumentRequest);
         return memberService.getDocuments(getDocumentRequest);

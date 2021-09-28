@@ -17,7 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 @Document(collection = "document")
-public class MemberDocument {
+public class MemberDocument extends BaseEntity{
 
     @MongoId(FieldType.OBJECT_ID)
     private String id;

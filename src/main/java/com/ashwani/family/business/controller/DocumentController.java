@@ -9,6 +9,7 @@ import com.ashwani.family.infra.model.response.AddDocumentTypeResponse;
 import com.ashwani.family.infra.model.response.GetDocumentTypesResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,6 +30,7 @@ public class DocumentController {
     }
 
     @GetMapping("/documentTypes")
+    @Cacheable(value = "document_types")
     public GetDocumentTypesResponse getDocumentTypes(){
         log.info("Get Document types request");
         return documentTypeService.getDocumentTypes();

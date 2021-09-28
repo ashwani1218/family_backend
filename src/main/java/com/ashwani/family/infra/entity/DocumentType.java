@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @AllArgsConstructor
 @Builder
 @Document(collection = "document_type")
-public class DocumentType {
+public class DocumentType extends BaseEntity{
 
     @MongoId(FieldType.OBJECT_ID)
     private String id;

@@ -1,253 +1,255 @@
-2021-09-27 18:45:55,460 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:374)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:332)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
-	at com.ashwani.family.FamilyApplication.main(FamilyApplication.java:10)
+2021-09-28 15:29:40,165 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting FamilyApplication using Java 11.0.11 on Ashwanis-MacBook-Pro.local with PID 3119 (/Users/ashwani/Projects/family/family_backend/target/classes started by ashwani in /Users/ashwani/Projects/family/family_backend)
+2021-09-28 15:29:40,168 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-09-28 15:29:40,169 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-09-28 15:29:40,221 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-28 15:29:40,221 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-28 15:29:41,239 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:29:41,241 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-28 15:29:41,405 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 160 ms. Found 3 MongoDB repository interfaces.
+2021-09-28 15:29:41,424 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:29:41,429 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-28 15:29:41,447 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.DocumentTypeRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:29:41,449 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.FamilyMemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:29:41,450 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.MemberDocumentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:29:41,450 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2021-09-28 15:29:42,004 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2021-09-28 15:29:42,015 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2021-09-28 15:29:42,015 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-28 15:29:42,080 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-09-28 15:29:42,080 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1858 ms
+2021-09-28 15:29:42,426 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-28 15:29:42,546 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152e78e8833150e6e005c04', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2021-09-28 15:29:42,548 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-rtt-ClusterId{value='6152e78e8833150e6e005c04', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:1}] to localhost:27017
+2021-09-28 15:29:42,549 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152e78e8833150e6e005c04', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=74540973}
+2021-09-28 15:29:42,608 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-09-28 15:29:42,711 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:27017
+2021-09-28 15:29:44,114 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-09-28 15:29:44,167 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-28 15:29:44,179 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started FamilyApplication in 9.57 seconds (JVM running for 10.402)
+2021-09-28 15:32:35,670 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-28 15:32:35,673 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-09-28 15:32:35,689 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 16 ms
+2021-09-28 15:32:41,601 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find All family members request
+2021-09-28 15:32:41,836 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.serializer.SerializationException: Cannot serialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.io.NotSerializableException: com.ashwani.family.infra.entity.FamilyMember] with root cause
+java.io.NotSerializableException: com.ashwani.family.infra.entity.FamilyMember
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
+	at java.base/java.util.ArrayList.writeObject(ArrayList.java:897)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
-	... 23 common frames omitted
-2021-09-27 19:12:38,049 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:374)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:332)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
-	at com.ashwani.family.FamilyApplication.main(FamilyApplication.java:10)
+	at java.base/java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1145)
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1497)
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1433)
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1179)
+	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1553)
+	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1510)
+	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1433)
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1179)
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:46)
+	at org.springframework.core.serializer.Serializer.serializeToByteArray(Serializer.java:56)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:60)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:33)
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:94)
+	at org.springframework.data.redis.serializer.DefaultRedisElementWriter.write(DefaultRedisElementWriter.java:44)
+	at org.springframework.data.redis.serializer.RedisSerializationContext$SerializationPair.write(RedisSerializationContext.java:287)
+	at org.springframework.data.redis.cache.RedisCache.serializeCacheValue(RedisCache.java:282)
+	at org.springframework.data.redis.cache.RedisCache.put(RedisCache.java:168)
+	at org.springframework.cache.interceptor.AbstractCacheInvoker.doPut(AbstractCacheInvoker.java:87)
+	at org.springframework.cache.interceptor.CacheAspectSupport$CachePutRequest.apply(CacheAspectSupport.java:837)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:430)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at com.ashwani.family.business.controller.MemberController$$EnhancerBySpringCGLIB$$f007e4ad.findAllMembers(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
-	... 23 common frames omitted
-2021-09-27 19:13:31,768 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:374)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:332)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
-	at com.ashwani.family.FamilyApplication.main(FamilyApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
-	... 23 common frames omitted
-2021-09-27 19:17:50,669 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting FamilyApplication using Java 11.0.11 on Ashwanis-MacBook-Pro.local with PID 54525 (/Users/ashwani/Projects/family/family_backend/target/classes started by ashwani in /Users/ashwani/Projects/family/family_backend)
-2021-09-27 19:17:50,672 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-09-27 19:17:50,672 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-09-27 19:17:50,725 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-09-27 19:17:50,726 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-09-27 19:17:51,781 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-09-27 19:17:51,855 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 67 ms. Found 3 MongoDB repository interfaces.
-2021-09-27 19:17:52,370 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
-2021-09-27 19:17:52,381 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
-2021-09-27 19:17:52,381 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-09-27 19:17:52,443 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-09-27 19:17:52,443 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1716 ms
-2021-09-27 19:17:52,739 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-09-27 19:17:52,918 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2021-09-27 19:17:52,938 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-rtt-ClusterId{value='6151cb889442ef3953e8a022', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:137}] to localhost:27017
-2021-09-27 19:17:52,940 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6151cb889442ef3953e8a022', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:136}] to localhost:27017
-2021-09-27 19:17:52,946 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6151cb889442ef3953e8a022', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=153122076}
-2021-09-27 19:17:53,057 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Opened connection [connectionId{localValue:3, serverValue:138}] to localhost:27017
-2021-09-27 19:17:54,090 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 13 endpoint(s) beneath base path '/actuator'
-2021-09-27 19:17:54,136 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
-2021-09-27 19:17:54,148 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started FamilyApplication in 8.961 seconds (JVM running for 9.725)
-2021-09-27 19:20:25,735 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:3, serverValue:138}] to localhost:27017 because the pool has been closed.
-2021-09-27 19:21:13,448 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:374)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:332)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
-	at com.ashwani.family.FamilyApplication.main(FamilyApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [net.logstash.logback.appender.LogstashTcpSocketAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type net.logstash.logback.appender.LogstashTcpSocketAppender
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [logstash]. Did you define it below instead of above in the configuration file?
-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
-	... 23 common frames omitted
-2021-09-27 19:23:40,221 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting FamilyApplication using Java 11.0.11 on Ashwanis-MacBook-Pro.local with PID 54638 (/Users/ashwani/Projects/family/family_backend/target/classes started by ashwani in /Users/ashwani/Projects/family/family_backend)
-2021-09-27 19:23:40,224 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-09-27 19:23:40,225 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-09-27 19:23:40,276 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-09-27 19:23:40,277 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-09-27 19:23:41,259 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-09-27 19:23:41,314 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 50 ms. Found 3 MongoDB repository interfaces.
-2021-09-27 19:23:41,772 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
-2021-09-27 19:23:41,784 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
-2021-09-27 19:23:41,785 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-09-27 19:23:41,858 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-09-27 19:23:41,858 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1580 ms
-2021-09-27 19:23:42,362 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-09-27 19:23:42,616 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6151cce61e5d870ff83ee9fc', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:139}] to localhost:27017
-2021-09-27 19:23:42,617 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-rtt-ClusterId{value='6151cce61e5d870ff83ee9fc', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:140}] to localhost:27017
-2021-09-27 19:23:42,619 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6151cce61e5d870ff83ee9fc', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=133376683}
-2021-09-27 19:23:42,697 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2021-09-27 19:23:42,999 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Opened connection [connectionId{localValue:3, serverValue:141}] to localhost:27017
-2021-09-27 19:23:44,070 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 13 endpoint(s) beneath base path '/actuator'
-2021-09-27 19:23:44,116 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
-2021-09-27 19:23:44,128 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started FamilyApplication in 9.387 seconds (JVM running for 10.382)
-2021-09-27 19:30:55,020 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-09-27 19:30:55,067 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-09-27 19:30:55,160 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 90 ms
-2021-09-27 19:30:56,630 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find All family members request
-2021-09-27 19:33:11,953 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-3] Find Family member with id [61472b036231c17dfb58ecaa]
-2021-09-27 19:33:12,305 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-5] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
-2021-09-27 19:33:33,540 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-6] Find All family members request
-2021-09-27 20:02:47,142 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-8] Find All family members request
-2021-09-27 20:02:58,718 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-9] Find All family members request
-2021-09-27 20:03:01,290 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-10] Find Family member with id [61472b036231c17dfb58ecaa]
-2021-09-27 20:03:01,701 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
-2021-09-27 20:03:05,873 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-2] Find Family member with id [61472b036231c17dfb58ecaa]
-2021-09-27 20:03:06,866 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-3] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
-2021-09-27 20:04:54,593 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:3, serverValue:141}] to localhost:27017 because the pool has been closed.
-2021-09-27 20:05:21,344 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting FamilyApplication using Java 11.0.11 on Ashwanis-MacBook-Pro.local with PID 55463 (/Users/ashwani/Projects/family/family_backend/target/classes started by ashwani in /Users/ashwani/Projects/family/family_backend)
-2021-09-27 20:05:21,347 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-09-27 20:05:21,349 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-09-27 20:05:21,425 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-09-27 20:05:21,426 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-09-27 20:05:23,148 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-09-27 20:05:23,233 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 81 ms. Found 3 MongoDB repository interfaces.
-2021-09-27 20:05:23,941 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
-2021-09-27 20:05:23,961 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
-2021-09-27 20:05:23,962 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-09-27 20:05:24,084 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-09-27 20:05:24,084 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2656 ms
-2021-09-27 20:05:24,644 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-09-27 20:05:24,912 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6151d6ac3a8f810d5196da58', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:143}] to localhost:27017
-2021-09-27 20:05:24,911 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-rtt-ClusterId{value='6151d6ac3a8f810d5196da58', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:142}] to localhost:27017
-2021-09-27 20:05:24,916 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6151d6ac3a8f810d5196da58', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=178244083}
-2021-09-27 20:05:24,996 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2021-09-27 20:05:25,231 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Opened connection [connectionId{localValue:3, serverValue:144}] to localhost:27017
-2021-09-27 20:05:26,903 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 13 endpoint(s) beneath base path '/actuator'
-2021-09-27 20:05:26,991 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
-2021-09-27 20:05:27,021 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started FamilyApplication in 12.442 seconds (JVM running for 15.654)
-2021-09-27 20:06:44,997 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-09-27 20:06:45,040 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-09-27 20:06:45,431 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 377 ms
-2021-09-27 20:06:50,284 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find Family member with id [61472b036231c17dfb58ecaa]
-2021-09-27 20:06:57,748 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-3] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
-2021-09-27 20:08:00,960 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-4] Find All family members request
-2021-09-27 20:10:16,372 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:3, serverValue:144}] to localhost:27017 because the pool has been closed.
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-09-28 15:35:14,290 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:3, serverValue:3}] to localhost:27017 because the pool has been closed.
+2021-09-28 15:35:23,595 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting FamilyApplication using Java 11.0.11 on Ashwanis-MacBook-Pro.local with PID 3249 (/Users/ashwani/Projects/family/family_backend/target/classes started by ashwani in /Users/ashwani/Projects/family/family_backend)
+2021-09-28 15:35:23,597 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-09-28 15:35:23,597 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-09-28 15:35:23,659 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-28 15:35:23,659 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-28 15:35:24,612 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:35:24,614 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-28 15:35:24,774 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 155 ms. Found 3 MongoDB repository interfaces.
+2021-09-28 15:35:24,790 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:35:24,792 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-28 15:35:24,808 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.DocumentTypeRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:35:24,809 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.FamilyMemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:35:24,810 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.MemberDocumentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:35:24,810 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-09-28 15:35:25,298 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2021-09-28 15:35:25,309 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2021-09-28 15:35:25,309 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-28 15:35:25,369 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-09-28 15:35:25,369 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1709 ms
+2021-09-28 15:35:25,671 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-28 15:35:25,731 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-rtt-ClusterId{value='6152e8e535daf648e53fa996', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:5}] to localhost:27017
+2021-09-28 15:35:25,732 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152e8e535daf648e53fa996', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:4}] to localhost:27017
+2021-09-28 15:35:25,735 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152e8e535daf648e53fa996', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=17081668}
+2021-09-28 15:35:25,821 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-09-28 15:35:25,933 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Opened connection [connectionId{localValue:3, serverValue:6}] to localhost:27017
+2021-09-28 15:35:27,227 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-09-28 15:35:27,273 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-28 15:35:27,285 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started FamilyApplication in 9.152 seconds (JVM running for 9.88)
+2021-09-28 15:36:11,468 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-28 15:36:11,473 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-09-28 15:36:11,486 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 12 ms
+2021-09-28 15:36:17,140 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find All family members request
+2021-09-28 15:36:17,140 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-2] Find All family members request
+2021-09-28 15:36:17,182 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-8080-exec-2] Opened connection [connectionId{localValue:4, serverValue:7}] to localhost:27017
+2021-09-28 15:37:22,094 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-8] Find Family member with id [61472b036231c17dfb58ecaa]
+2021-09-28 15:37:22,194 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-10] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
+2021-09-28 15:37:31,356 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-2] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
+2021-09-28 15:38:35,845 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-5] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
+2021-09-28 15:39:23,660 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-10] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
+2021-09-28 15:39:30,573 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-2] Find Family member with id [614749e6d581202b23942c71]
+2021-09-28 15:39:30,621 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-3] Get Member Documents request [GetDocumentRequest(memberId=614749e6d581202b23942c71)]
+2021-09-28 15:39:50,748 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-6] Get Member Documents request [GetDocumentRequest(memberId=614749e6d581202b23942c71)]
+2021-09-28 15:39:57,175 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-8] Find Family member with id [6149a82dd581202b23942c72]
+2021-09-28 15:39:57,222 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-9] Get Member Documents request [GetDocumentRequest(memberId=6149a82dd581202b23942c72)]
+2021-09-28 15:40:03,447 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find Family member with id [6149a835d581202b23942c73]
+2021-09-28 15:40:03,486 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-2] Get Member Documents request [GetDocumentRequest(memberId=6149a835d581202b23942c73)]
+2021-09-28 15:40:18,333 INFO io.netty.util.internal.logging.AbstractInternalLogger [lettuce-eventExecutorLoop-1-7] Reconnecting, last destination was localhost/127.0.0.1:6379
+2021-09-28 15:40:18,353 WARN io.netty.util.internal.logging.AbstractInternalLogger [lettuce-nioEventLoop-4-2] Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+2021-09-28 15:40:27,430 INFO io.netty.util.internal.logging.AbstractInternalLogger [lettuce-eventExecutorLoop-1-3] Reconnecting, last destination was localhost:6379
+2021-09-28 15:40:27,434 WARN io.netty.util.internal.logging.AbstractInternalLogger [lettuce-nioEventLoop-4-6] Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+2021-09-28 15:40:35,728 INFO io.netty.util.internal.logging.AbstractInternalLogger [lettuce-eventExecutorLoop-1-4] Reconnecting, last destination was localhost:6379
+2021-09-28 15:40:35,736 WARN io.netty.util.internal.logging.AbstractInternalLogger [lettuce-nioEventLoop-4-7] Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+2021-09-28 15:40:52,129 INFO io.netty.util.internal.logging.AbstractInternalLogger [lettuce-eventExecutorLoop-1-1] Reconnecting, last destination was localhost:6379
+2021-09-28 15:40:52,149 INFO io.lettuce.core.protocol.ReconnectionHandler [lettuce-nioEventLoop-4-8] Reconnected to localhost:6379
+2021-09-28 15:41:08,237 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-9] Get Member Documents request [GetDocumentRequest(memberId=614749e6d581202b23942c71)]
+2021-09-28 15:41:23,969 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find Family member with id [6149a874d581202b23942c75]
+2021-09-28 15:41:24,002 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-2] Get Member Documents request [GetDocumentRequest(memberId=6149a874d581202b23942c75)]
+2021-09-28 15:41:31,648 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-6] Find Family member with id [6149a83cd581202b23942c74]
+2021-09-28 15:41:31,684 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-4] Get Member Documents request [GetDocumentRequest(memberId=6149a83cd581202b23942c74)]
+2021-09-28 15:41:38,937 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-8] Get Member Documents request [GetDocumentRequest(memberId=6149a874d581202b23942c75)]
+2021-09-28 15:43:09,231 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:3, serverValue:6}] to localhost:27017 because the pool has been closed.
+2021-09-28 15:43:09,235 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:4, serverValue:7}] to localhost:27017 because the pool has been closed.
+2021-09-28 15:43:19,355 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting FamilyApplication using Java 11.0.11 on Ashwanis-MacBook-Pro.local with PID 3337 (/Users/ashwani/Projects/family/family_backend/target/classes started by ashwani in /Users/ashwani/Projects/family/family_backend)
+2021-09-28 15:43:19,357 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-09-28 15:43:19,357 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-09-28 15:43:19,409 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-28 15:43:19,410 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-28 15:43:20,376 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:43:20,378 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-28 15:43:20,581 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 198 ms. Found 3 MongoDB repository interfaces.
+2021-09-28 15:43:20,606 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:43:20,609 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-28 15:43:20,637 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.DocumentTypeRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:43:20,638 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.FamilyMemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:43:20,639 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.MemberDocumentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:43:20,639 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2021-09-28 15:43:21,241 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2021-09-28 15:43:21,252 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2021-09-28 15:43:21,252 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-28 15:43:21,315 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-09-28 15:43:21,315 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1904 ms
+2021-09-28 15:43:21,688 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-28 15:43:21,754 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152eac1c120537f13406184', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:9}] to localhost:27017
+2021-09-28 15:43:21,756 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-rtt-ClusterId{value='6152eac1c120537f13406184', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:8}] to localhost:27017
+2021-09-28 15:43:21,758 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152eac1c120537f13406184', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=17226797}
+2021-09-28 15:43:21,854 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-09-28 15:43:21,963 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Opened connection [connectionId{localValue:3, serverValue:10}] to localhost:27017
+2021-09-28 15:43:23,348 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-09-28 15:43:23,400 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-28 15:43:23,413 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started FamilyApplication in 9.551 seconds (JVM running for 10.297)
+2021-09-28 15:43:29,427 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-28 15:43:29,429 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-09-28 15:43:29,432 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2021-09-28 15:43:44,287 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-3] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
+2021-09-28 15:44:51,608 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringApplicationShutdownHook] Closed connection [connectionId{localValue:3, serverValue:10}] to localhost:27017 because the pool has been closed.
+2021-09-28 15:44:59,442 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting FamilyApplication using Java 11.0.11 on Ashwanis-MacBook-Pro.local with PID 3350 (/Users/ashwani/Projects/family/family_backend/target/classes started by ashwani in /Users/ashwani/Projects/family/family_backend)
+2021-09-28 15:44:59,444 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-09-28 15:44:59,444 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-09-28 15:44:59,496 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-28 15:44:59,497 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-28 15:45:00,472 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:45:00,474 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-28 15:45:00,637 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 158 ms. Found 3 MongoDB repository interfaces.
+2021-09-28 15:45:00,650 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-28 15:45:00,652 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-28 15:45:00,665 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.DocumentTypeRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:45:00,666 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.FamilyMemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:45:00,667 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ashwani.family.infra.repository.MemberDocumentRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-28 15:45:00,667 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-09-28 15:45:01,157 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2021-09-28 15:45:01,167 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2021-09-28 15:45:01,167 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-28 15:45:01,230 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-09-28 15:45:01,231 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1734 ms
+2021-09-28 15:45:01,553 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-28 15:45:01,619 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-rtt-ClusterId{value='6152eb251aa42e4bb357ccce', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:12}] to localhost:27017
+2021-09-28 15:45:01,620 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152eb251aa42e4bb357ccce', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:11}] to localhost:27017
+2021-09-28 15:45:01,622 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='6152eb251aa42e4bb357ccce', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=17054984}
+2021-09-28 15:45:01,709 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-09-28 15:45:01,834 INFO com.mongodb.diagnostics.logging.SLF4JLogger [restartedMain] Opened connection [connectionId{localValue:3, serverValue:13}] to localhost:27017
+2021-09-28 15:45:03,174 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-09-28 15:45:03,233 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-28 15:45:03,248 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started FamilyApplication in 9.246 seconds (JVM running for 9.949)
+2021-09-28 15:45:23,767 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-28 15:45:23,768 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-09-28 15:45:23,770 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2021-09-28 15:45:29,391 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-1] Find All family members request
+2021-09-28 15:45:29,464 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-2] Find All family members request
+2021-09-28 15:45:41,222 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-3] Find Family member with id [61472b036231c17dfb58ecaa]
+2021-09-28 15:45:41,330 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-4] Get Member Documents request [GetDocumentRequest(memberId=61472b036231c17dfb58ecaa)]
+2021-09-28 15:46:02,167 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-9] Find Family member with id [614749e6d581202b23942c71]
+2021-09-28 15:46:02,225 INFO com.ashwani.family.business.controller.MemberController [http-nio-8080-exec-10] Get Member Documents request [GetDocumentRequest(memberId=614749e6d581202b23942c71)]

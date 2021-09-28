@@ -18,7 +18,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Builder
 @Document(collection = "family_member")
-public class FamilyMember {
+public class FamilyMember extends BaseEntity{
 
     @MongoId(FieldType.OBJECT_ID)
     private String id;
