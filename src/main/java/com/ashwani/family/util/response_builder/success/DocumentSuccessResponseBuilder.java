@@ -1,6 +1,7 @@
 package com.ashwani.family.util.response_builder.success;
 
 import com.ashwani.family.infra.entity.DocumentType;
+import com.ashwani.family.infra.entity.MemberDocument;
 import com.ashwani.family.infra.model.response.AddDocumentResponse;
 import com.ashwani.family.infra.model.response.AddDocumentTypeResponse;
 import com.ashwani.family.infra.model.response.BaseResponse;
@@ -23,7 +24,7 @@ public class DocumentSuccessResponseBuilder {
     @Autowired
     private CacheManager cacheManager;
 
-    public AddDocumentResponse addDocument() {
+    public AddDocumentResponse addDocument(MemberDocument document ) {
         for(String name:cacheManager.getCacheNames()){
             Objects.requireNonNull(cacheManager.getCache(name)).clear();            // clear cache by name
         }
@@ -47,7 +48,7 @@ public class DocumentSuccessResponseBuilder {
         return resp;
     }
 
-    public AddDocumentTypeResponse addDocumentType() {
+    public AddDocumentTypeResponse addDocumentType(DocumentType documentType) {
         for(String name:cacheManager.getCacheNames()){
             Objects.requireNonNull(cacheManager.getCache(name)).clear();            // clear cache by name
         }

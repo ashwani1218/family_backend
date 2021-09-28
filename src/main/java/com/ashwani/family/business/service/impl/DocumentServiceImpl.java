@@ -36,7 +36,7 @@ public class DocumentServiceImpl implements DocumentService {
         }catch (Exception e){
             return failedResponseBuilder.addDocument();
         }
-        return successResponseBuilder.addDocument();
+        return successResponseBuilder.addDocument(document);
     }
 
     @Override

@@ -43,6 +43,6 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
         }catch (Exception e){
             return failedResponseBuilder.addDocumentType();
         }
-        return successResponseBuilder.addDocumentType();
+        return successResponseBuilder.addDocumentType(documentType);
     }
 }
