@@ -2,6 +2,6 @@
 *.iml
 target
 target/*
-logs
-logs/*
+**/logs
 *.log
+logs/spring-boot-logger.log

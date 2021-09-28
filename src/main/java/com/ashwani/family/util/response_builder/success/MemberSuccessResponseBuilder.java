@@ -9,9 +9,12 @@ import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import com.ashwani.family.util.constants.ResponseConstants;
 import com.ashwani.family.util.response_builder.BaseSuccessResponseBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
@@ -19,7 +22,13 @@ public class MemberSuccessResponseBuilder extends BaseSuccessResponseBuilder {
     @Autowired
     private BaseSuccessResponseBuilder baseSuccessResponseBuilder;
 
-    public BaseResponse addMember() {
+    @Autowired
+    private CacheManager cacheManager;
+
+    public BaseResponse addMember(FamilyMember member) {
+        for(String name:cacheManager.getCacheNames()){
+            Objects.requireNonNull(cacheManager.getCache(name)).clear();            // clear cache by name
+        }
         BaseResponse resp = baseSuccessResponseBuilder.baseSuccessResponse();
         resp.setResponseDescription(ResponseConstants.ADD_MEMBER_SUCCESS);
         return resp;

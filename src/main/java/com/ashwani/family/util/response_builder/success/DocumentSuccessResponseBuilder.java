@@ -8,9 +8,11 @@ import com.ashwani.family.infra.model.response.GetDocumentTypesResponse;
 import com.ashwani.family.util.constants.ResponseConstants;
 import com.ashwani.family.util.response_builder.BaseSuccessResponseBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class DocumentSuccessResponseBuilder {
@@ -18,7 +20,13 @@ public class DocumentSuccessResponseBuilder {
     @Autowired
     private BaseSuccessResponseBuilder baseSuccessResponseBuilder;
 
+    @Autowired
+    private CacheManager cacheManager;
+
     public AddDocumentResponse addDocument() {
+        for(String name:cacheManager.getCacheNames()){
+            Objects.requireNonNull(cacheManager.getCache(name)).clear();            // clear cache by name
+        }
         BaseResponse response = baseSuccessResponseBuilder.baseSuccessResponse();
         var resp = new AddDocumentResponse();
         resp.setHttpStatus(response.getHttpStatus());
@@ -40,6 +48,9 @@ public class DocumentSuccessResponseBuilder {
     }
 
     public AddDocumentTypeResponse addDocumentType() {
+        for(String name:cacheManager.getCacheNames()){
+            Objects.requireNonNull(cacheManager.getCache(name)).clear();            // clear cache by name
+        }
         BaseResponse response = baseSuccessResponseBuilder.baseSuccessResponse();
         var resp = new AddDocumentTypeResponse();
         resp.setHttpStatus(response.getHttpStatus());

@@ -9,8 +9,11 @@ import com.ashwani.family.infra.model.response.FindMemberResponse;
 import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Objects;
 
 @RestController
 @CrossOrigin("*")
@@ -22,6 +25,7 @@ public class MemberController {
 
     @PostMapping("/addMember")
     public BaseResponse addMember(@RequestBody AddMemberRequest request){
+
         log.info("Add Family member request [{}]", request);
         return memberService.addMember(request);
     }
