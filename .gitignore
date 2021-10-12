@@ -5,3 +5,4 @@ target/*
 **/logs
 *.log
 logs/spring-boot-logger.log
+logs
