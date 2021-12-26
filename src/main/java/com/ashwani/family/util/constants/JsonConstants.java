@@ -2,9 +2,6 @@ package com.ashwani.family.util.constants;
 
 public class JsonConstants {
 
-
-
-
     private JsonConstants() {
     };
 
@@ -27,6 +24,7 @@ public class JsonConstants {
 
     public static final String MEMBERS = "members";
     public static final String MEMBER_DOCUMENTS = "member_documents";
+    public static final String DOCUMENTS = "documents";
     public static final String DOCUMENT_TYPES = "document_types";
     public static final String DOCUMENT_TYPE = "document_type";
     public static final String DOCUMENT_TITLE = "title";

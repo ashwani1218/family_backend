@@ -6,6 +6,7 @@ import com.ashwani.family.infra.model.request.AddDocumentRequest;
 import com.ashwani.family.infra.model.request.AddDocumentTypeRequest;
 import com.ashwani.family.infra.model.response.AddDocumentResponse;
 import com.ashwani.family.infra.model.response.AddDocumentTypeResponse;
+import com.ashwani.family.infra.model.response.GetDocumentResponse;
 import com.ashwani.family.infra.model.response.GetDocumentTypesResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,14 @@ public class DocumentController {
         log.info("Add Document Type Request [{}]",request);
         return documentTypeService.addDocument(request);
     }
+
+    @GetMapping("/documents")
+    public GetDocumentResponse getDocuments(){
+        log.info("Get all documents request");
+        return documentService.getAllDocuments();
+    }
+
+
+
 
 }

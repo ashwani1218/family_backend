@@ -15,7 +15,6 @@ import com.ashwani.family.util.response_builder.failed.MemberFailedResponseBuild
 import com.ashwani.family.util.response_builder.success.MemberSuccessResponseBuilder;
 import com.ashwani.family.business.translator.MemberTranslator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,7 +47,7 @@ public class MemberServiceImpl implements MemberService {
         catch (Exception ex){
             return failedResponseBuilder.addMember();
         }
-        return successResponseBuilder.addMember(member);
+        return successResponseBuilder.addMember();
     }
 
     @Override

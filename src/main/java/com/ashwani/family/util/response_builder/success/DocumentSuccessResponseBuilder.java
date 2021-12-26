@@ -2,10 +2,7 @@ package com.ashwani.family.util.response_builder.success;
 
 import com.ashwani.family.infra.entity.DocumentType;
 import com.ashwani.family.infra.entity.MemberDocument;
-import com.ashwani.family.infra.model.response.AddDocumentResponse;
-import com.ashwani.family.infra.model.response.AddDocumentTypeResponse;
-import com.ashwani.family.infra.model.response.BaseResponse;
-import com.ashwani.family.infra.model.response.GetDocumentTypesResponse;
+import com.ashwani.family.infra.model.response.*;
 import com.ashwani.family.util.constants.ResponseConstants;
 import com.ashwani.family.util.response_builder.BaseSuccessResponseBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
