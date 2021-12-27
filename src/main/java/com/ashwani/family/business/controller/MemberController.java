@@ -45,7 +45,7 @@ public class MemberController {
     }
 
     @PostMapping("/getDocuments")
-    @Cacheable(value = "documents", key = "#getDocumentRequest.memberId")
+    @Cacheable(value = "member_documents", key = "#getDocumentRequest.memberId")
     public GetDocumentResponse getDocuments(@RequestBody GetDocumentRequest getDocumentRequest){
         log.info("Get Member Documents request [{}]", getDocumentRequest);
         return memberService.getDocuments(getDocumentRequest);

@@ -6,3 +6,4 @@ target/*
 *.log
 logs/spring-boot-logger.log
 logs
+*.json

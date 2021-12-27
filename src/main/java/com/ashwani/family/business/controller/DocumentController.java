@@ -44,12 +44,9 @@ public class DocumentController {
     }
 
     @GetMapping("/documents")
+    @Cacheable(value = "documents")
     public GetDocumentResponse getDocuments(){
         log.info("Get all documents request");
         return documentService.getAllDocuments();
     }
-
-
-
-
 }
