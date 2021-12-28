@@ -1,16 +1,19 @@
 package com.ashwani.family.infra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -26,7 +29,12 @@ public class MemberDocument extends BaseEntity{
     private DocumentType particular;
 
     @DBRef
+    @JsonIgnore
     private FamilyMember holder;
+
+    @DBRef
+    @JsonIgnore
+    private Set<DocFile> files;
 
     private String documentTitle;
 
@@ -44,8 +52,10 @@ public class MemberDocument extends BaseEntity{
 
     private String lastYearOfPayment;
 
+    @CreatedDate
     private Date createAt;
 
+    @LastModifiedDate
     private Date updatedAt;
 
     @Override

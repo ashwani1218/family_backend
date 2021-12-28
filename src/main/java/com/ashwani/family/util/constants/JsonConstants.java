@@ -2,8 +2,11 @@ package com.ashwani.family.util.constants;
 
 public class JsonConstants {
 
+
     private JsonConstants() {
     };
+
+
 
     public static final String BASE_RESPONSE_STATUS = "status";
     public static final String BASE_RESPONSE_CODE = "response_code";
@@ -23,7 +26,10 @@ public class JsonConstants {
     public static final String LAST_YEAR_OF_PAYMENT = "last_year_of_payment";
 
     public static final String MEMBERS = "members";
+    public static final String FILES = "files";
+    public static final String FILE = "file";
     public static final String MEMBER_DOCUMENTS = "member_documents";
+    public static final String DOCUMENT_ID = "document_id";
     public static final String DOCUMENTS = "documents";
     public static final String DOCUMENT_TYPES = "document_types";
     public static final String DOCUMENT_TYPE = "document_type";

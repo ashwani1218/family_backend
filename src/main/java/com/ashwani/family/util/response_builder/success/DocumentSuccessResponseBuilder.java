@@ -31,6 +31,7 @@ public class DocumentSuccessResponseBuilder {
         resp.setResponseCode(response.getResponseCode());
         resp.setResponseDescription(ResponseConstants.ADD_DOCUMENT_SUCCESS);
         resp.setStatus(response.getStatus());
+        resp.setDocumentId(document.getId());
         return resp;
     }
 

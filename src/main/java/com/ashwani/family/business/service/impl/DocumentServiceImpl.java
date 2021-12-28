@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DocumentServiceImpl implements DocumentService {
@@ -47,13 +48,14 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
-    public FindAllDocumentResponse getAllDocumentsByHolder(FindAllDocumentRequest request) {
-        return null;
-    }
-
-    @Override
     public GetDocumentResponse getAllDocuments() {
         List<MemberDocument> documents = memberDocumentRepository.findAll();
         return memberSuccessResponseBuilder.getDocuments(documents);
+    }
+
+    @Override
+    public MemberDocument findById(String documentId) {
+        Optional<MemberDocument> document = memberDocumentRepository.findById(documentId);
+        return document.orElse(null);
     }
 }

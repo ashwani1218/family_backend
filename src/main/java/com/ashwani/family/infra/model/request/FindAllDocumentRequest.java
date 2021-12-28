@@ -13,5 +13,5 @@ import lombok.*;
 public class FindAllDocumentRequest extends BaseRequest implements GenericRequest {
 
     @JsonProperty(JsonConstants.HOLDER)
-    private Long holder;
+    private String holder;
 }

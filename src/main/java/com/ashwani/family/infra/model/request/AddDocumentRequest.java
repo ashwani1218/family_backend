@@ -54,4 +54,5 @@ public class AddDocumentRequest extends BaseRequest implements GenericRequest {
 
     @JsonProperty(JsonConstants.LAST_YEAR_OF_PAYMENT)
     private String lastYearOfPayment;
+
 }

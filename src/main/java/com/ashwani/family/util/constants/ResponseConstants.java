@@ -2,6 +2,8 @@ package com.ashwani.family.util.constants;
 
 public class ResponseConstants {
 
+
+
     private ResponseConstants(){}
     //Response Code
     public  static final String SUCCESS_CODE = "200";
@@ -21,9 +23,13 @@ public class ResponseConstants {
     public static final String ADD_MEMBER_SUCCESS = "Member Added Successfully";
     public static final String ADD_MEMBER_FAILURE = "Unable to add Member";
 
+    public static final String GET_FILE_SUCCESS = "Get File Success";
+    public static final String GET_FILE_FAILURE = "File Not found";
     public static final String ADD_DOCUMENT_SUCCESS = "Document Added Successfully";
     public static final String ADD_DOCUMENT_FAILURE = "Unable to add Document";
     public static final String GET_DOC_TYPE_SUCCESS = "Doc types fetched successfully";
     public static final String ADD_DOC_TYPE_SUCCESS = "Document Type added successfully";
     public static final String ADD_DOCUMENT_TYPE_FAILURE = "Unable to add Document type";
+    public static final String ADD_FILE_SUCCESS = "File Added Successfully";
+    public static final String ADD_FILE_FAILURE = "Failed to add File";
 }
