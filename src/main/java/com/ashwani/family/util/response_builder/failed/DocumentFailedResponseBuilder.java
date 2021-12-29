@@ -34,4 +34,10 @@ public class DocumentFailedResponseBuilder {
         resp.setResponseDescription(ResponseConstants.ADD_DOCUMENT_TYPE_FAILURE);
         return resp;
     }
+
+    public BaseResponse markedAsPaid() {
+        BaseResponse response = failedResponseBuilder.baseFailResponse();
+        response.setResponseDescription(ResponseConstants.MARKED_AS_PAID_FAILURE);
+        return response;
+    }
 }

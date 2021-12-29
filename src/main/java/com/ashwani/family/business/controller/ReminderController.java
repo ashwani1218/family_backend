@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/reminders")
 @CrossOrigin("*")
 @Slf4j
+@RequestMapping(value = "/reminders")
 public class ReminderController {
 
     @Autowired

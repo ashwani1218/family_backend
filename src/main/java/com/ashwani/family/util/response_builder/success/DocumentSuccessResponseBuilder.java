@@ -58,4 +58,10 @@ public class DocumentSuccessResponseBuilder {
         resp.setStatus(response.getStatus());
         return resp;
     }
+
+    public BaseResponse markedAsPaid(MemberDocument doc) {
+        BaseResponse response = baseSuccessResponseBuilder.baseSuccessResponse();
+        response.setResponseDescription(ResponseConstants.MARKED_AS_PAID_SUCCESS);
+        return response;
+    }
 }

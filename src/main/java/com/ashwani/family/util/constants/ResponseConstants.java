@@ -3,8 +3,8 @@ package com.ashwani.family.util.constants;
 public class ResponseConstants {
 
 
-
     private ResponseConstants(){}
+
     //Response Code
     public  static final String SUCCESS_CODE = "200";
     public  static final String SUCCESS_CODE_EMPTY_RESPONSE = "204";
@@ -27,6 +27,8 @@ public class ResponseConstants {
     public static final String GET_FILE_FAILURE = "File Not found";
     public static final String ADD_DOCUMENT_SUCCESS = "Document Added Successfully";
     public static final String ADD_DOCUMENT_FAILURE = "Unable to add Document";
+    public static final String MARKED_AS_PAID_SUCCESS = "Document Marked as Paid";
+    public static final String MARKED_AS_PAID_FAILURE = "Document not Marked as Paid";
     public static final String GET_DOC_TYPE_SUCCESS = "Doc types fetched successfully";
     public static final String ADD_DOC_TYPE_SUCCESS = "Document Type added successfully";
     public static final String ADD_DOCUMENT_TYPE_FAILURE = "Unable to add Document type";
